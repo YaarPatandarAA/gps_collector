@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rubygems'
 require 'rack'
 require 'minitest/autorun'
 require './lib/gps'
 
-describe GPS do 
+describe GPS do
   before do
     @request = Rack::MockRequest.new(GPS)
   end

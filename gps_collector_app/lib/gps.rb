@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+Dir['./lib/requests/*.rb'].sort.each { |file| require file }
+
 ##
 # This class is the main module our GPS Collector.
 #
@@ -14,14 +16,13 @@ class GPS
   end
 
   def response
+    params = JSON.parse(@request.body.read)
+
     case @request.path
-    when '/' then Rack::Response.new(render('AJ'))
-    when '/other' then Rack::Response.new('Hello Other!')
+    when '/add_points' then add_points(params)
+    when '/geo_radius' then geo_radius(params)
+    when '/geo_polygon' then geo_polygon(params)
     else Rack::Response.new('Not Found!', 404)
     end
-  end
-
-  def render(name)
-    "Hello, #{name}!"
   end
 end
