@@ -1,5 +1,14 @@
 # frozen_string_literal: true
 
+# {
+#     "Point":{
+#         "type": "Point",
+#         "coordinates": [100.0, 0.0]
+#     },
+#     "Radius": 5000000.0,
+#     "Meters": true
+# }
+
 require './lib/helpers/db_execs'
 require './lib/helpers/parse_point'
 
@@ -35,6 +44,6 @@ def radius_errors(radius, radius_measure)
   raise StandardError, 'Radius must be numeric' unless radius.is_a? Numeric
   raise StandardError, 'Radius must be non-negative' if radius.negative?
 
-  raise StandardError, 'Meters boolean parameter needed' unless radius_measure
+  raise StandardError, 'Meters boolean parameter needed' if [nil, 0].include?(radius_measure)
   raise StandardError, 'Meters parameter value needs to be boolean' unless [true, false].include? radius_measure
 end

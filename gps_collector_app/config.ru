@@ -9,4 +9,5 @@ use Rack::Reloader, 0
 
 init_db
 random_fill
+
 run GPS

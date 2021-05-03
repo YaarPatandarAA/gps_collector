@@ -2,10 +2,6 @@
 
 Dir['./lib/requests/*.rb'].sort.each { |file| require file }
 
-##
-# This class is the main module our GPS Collector.
-#
-# All web/http/rack logic should go through here for our app.
 class GPS
   def self.call(env)
     new(env).response.finish
