@@ -77,4 +77,10 @@ d22806639140        mdillon/postgis:9.4   "docker-entrypoint.s…"   3 seconds a
 2. Perform a `rubocop` command, in a terminal, here.
 3. The above command will go through all code and check for any linting errors.
 <br>
-<br>
+
+### References
+* [Chapter 5. PostGIS Reference](https://postgis.net/docs/reference.html)
+* [GeoJSON examples](https://tools.ietf.org/html/rfc7946#appendix-A)
+* [Getting Started with YARD](https://rubydoc.info/gems/yard/file/docs/GettingStarted.md)
+* [Rubocop Configuration](https://docs.rubocop.org/rubocop/configuration.html)
+* [Ruby PG Gem](https://github.com/ged/ruby-pg/)
