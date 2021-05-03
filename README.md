@@ -1,5 +1,5 @@
 # gps_collector
- The gps_collector is a application with 3 simple endpoints. The endpoints help add GeoJSON points into a database and help retrieve GeoJSON points from database which are within a certain parameter. gps_collector is a Rack application with a Postgres/PostGIS database. Using PostGIS helps make Geometry operations simple and easy, as most come as built in functionality. 
+The gps_collector is a basic Rack application performed as my challenge for [Bus Patrol]{https://www.buspatrol.com}. It is a basic app with 3 endpoints, the endpoints help add GeoJSON points into a database and help retrieve GeoJSON points from database which are within a certain parameter. gps_collector is a Rack application with a Postgres/PostGIS database. Using PostGIS helps make Geometry operations simple and easy, as most come as built in functionality. 
 <br>
 
 # Install
