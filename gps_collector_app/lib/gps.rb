@@ -12,7 +12,8 @@ class GPS
   end
 
   def response
-    params = JSON.parse(@request.body.read)
+    body_read = @request.body.read
+    params = JSON.parse(body_read) unless [nil, 0, ''].include? body_read
 
     case @request.path
     when '/add_points' then add_points(params)
