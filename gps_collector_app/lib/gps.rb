@@ -2,6 +2,18 @@
 
 Dir['./lib/requests/*.rb'].sort.each { |file| require file }
 
+# Converts the object into textual markup given a specific `format`
+# (defaults to `:html`)
+#
+# == Parameters:
+# format::
+#   A Symbol declaring the format to convert the object to. This
+#   can be `:text` or `:html`.
+#
+# == Returns:
+# A string representing the object in a specified
+# format.
+#
 class GPS
   def self.call(env)
     new(env).response.finish
@@ -11,6 +23,8 @@ class GPS
     @request = Rack::Request.new(env)
   end
 
+  # Converts the object into textual markup given a specific `format`
+  # (defaults to `:html`)
   def response
     body_read = @request.body.read
     params = JSON.parse(body_read) unless [nil, 0, ''].include? body_read

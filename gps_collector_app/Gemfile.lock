@@ -24,6 +24,7 @@ GEM
       parser (>= 2.7.1.5)
     ruby-progressbar (1.11.0)
     unicode-display_width (2.0.0)
+    yard (0.9.26)
 
 PLATFORMS
   x86_64-darwin-20
@@ -33,6 +34,7 @@ DEPENDENCIES
   pg
   rack
   rubocop
+  yard
 
 BUNDLED WITH
    2.2.16
