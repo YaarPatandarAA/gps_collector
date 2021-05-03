@@ -1,7 +1,6 @@
 # gps_collector
  The gps_collector is a application with 3 simple endpoints. The endpoints help add GeoJSON points into a database and help retrieve GeoJSON points from database which are within a certain parameter. gps_collector is a Rack application with a Postgres/PostGIS database. Using PostGIS helps make Geometry operations simple and easy, as most come as built in functionality. 
 <br>
-<br>
 
 # Install
 ## Prerequisite
@@ -49,7 +48,6 @@ d22806639140        mdillon/postgis:9.4   "docker-entrypoint.s…"   3 seconds a
      * 'rubocop'
      * 'yard'
 <br>
-<br>
 
 # Running Rack App
 1. Assuming docker is running with the Database
@@ -58,14 +56,12 @@ d22806639140        mdillon/postgis:9.4   "docker-entrypoint.s…"   3 seconds a
 4. App should be up and running
    * Served on http://127.0.0.1:9292
 <br>
-<br>
 
 # Testing App
 1. Navigate, in a terminal, to `gps_collector_app` folder.
 2. Perform a `ruby gps_test.rb` command, in a terminal, here.
 3. This will perform tests listed in the `gps_test.rb` file.
    * These are a few simple `minitest` test fucntions
-<br>
 <br>
 
 # Building Docs
@@ -74,7 +70,6 @@ d22806639140        mdillon/postgis:9.4   "docker-entrypoint.s…"   3 seconds a
 3. Documentation for the methods and class will be generated
    * HTML doc will be located in `doc` folder within the `gps_collector_app` folder.
    * Access the documentation webpage by opening the `Index.html` file.
-<br>
 <br>
 
 # Linting App
