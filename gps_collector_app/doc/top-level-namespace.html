@@ -98,22 +98,66 @@
     <dl class="constants">
       
         <dt id="ADD_POINT_SQL-constant" class="">ADD_POINT_SQL =
-          
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>This is a SQL Query to insert points into the geo_points table.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>INSERT INTO geo_points (point) VALUES </span><span class='tstring_end'>&#39;</span></span></pre></dd>
       
         <dt id="CREATE_EXTENTION-constant" class="">CREATE_EXTENTION =
-          
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>This is a SQL Query to create a UUID extention if it does not exist.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CREATE EXTENSION IF NOT EXISTS &quot;uuid-ossp&quot;;</span><span class='tstring_end'>&#39;</span></span></pre></dd>
       
         <dt id="CREATE_TABLE-constant" class="">CREATE_TABLE =
-          
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>This is a SQL Query to create the geo_points table if it does not exist. The table will consist of an ID and a POINT.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CREATE TABLE IF NOT EXISTS geo_points (id uuid DEFAULT uuid_generate_v1(), point geography(POINT), PRIMARY KEY (id));</span><span class='tstring_end'>&#39;</span></span></pre></dd>
       
         <dt id="CLEAR_POINTS_TABLE-constant" class="">CLEAR_POINTS_TABLE =
-          
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>This is a SQL Query to clear the Table form all data records.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>TRUNCATE geo_points;</span><span class='tstring_end'>&#39;</span></span></pre></dd>
       
@@ -151,7 +195,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Request method to add Geo Points to the database.</p>
+</div></span>
   
 </li>
 
@@ -173,7 +219,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Helper method to check and confirm the radius params.</p>
+</div></span>
   
 </li>
 
@@ -195,7 +243,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Takes a SQL Query and runs it aginst a Postgres/PostGIS databse results from Query are then reutned back to where call was made.</p>
+</div></span>
   
 </li>
 
@@ -218,7 +268,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>{   “type”: “Polygon”,   “coordinates”: [     [       [100.0, 0.0],       [101.0, 0.0],       [101.0, 1.0],       [100.0, 1.0],       [100.0, 0.0]     ]   ] }.</p>
+<p>Request method to GET GeoJSON point(s) within a geographical polygon.</p>
 </div></span>
   
 </li>
@@ -241,7 +291,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Helper function to make the query to the DB to GET GeoJSON point(s) within a geographical polygon.</p>
+</div></span>
   
 </li>
 
@@ -263,7 +315,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Request method to GET GeoJSON point(s) within a radius around a point.</p>
+</div></span>
   
 </li>
 
@@ -285,7 +339,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Simple function to call few queries on Databse, this will initialize a new database if not already ready.</p>
+</div></span>
   
 </li>
 
@@ -307,7 +363,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Takes a GeoJSON point, takes out and returns the coordinates.</p>
+</div></span>
   
 </li>
 
@@ -329,7 +387,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>This function should be used for Polygon with holes, but is not used.</p>
+</div></span>
   
 </li>
 
@@ -351,7 +411,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>This function takes a Polygon object with no holes and has its coordinates taken out and joined into a string and returned.</p>
+</div></span>
   
 </li>
 
@@ -373,7 +435,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Helper method to help parse coordinates from a GeoCollection.</p>
+</div></span>
   
 </li>
 
@@ -395,7 +459,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Helper method to through any errors if there is a discrepancy in the params.</p>
+</div></span>
   
 </li>
 
@@ -417,7 +483,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Simple function to fill the Points table with random values.</p>
+</div></span>
   
 </li>
 
@@ -440,26 +508,77 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Request method to add Geo Points to the database.</p>
+
+<h2 id="label-Parameters-3A">Parameters:</h2>
+<dl class="rdoc-list note-list"><dt>params
+<dd>
+<p>This is the Points parameter which will be added to the database. Two types of values can be expected here.</p>
+<ul><li>
+<p>Array of GeoJSON Point objects</p>
+</li><li>
+<p>Geometry collection</p>
+</li></ul>
+</dd></dl>
+
+<pre class="code ruby"><code class="ruby">Array of GeoJSON Point objects
+[
+    {
+        &quot;type&quot;: &quot;Point&quot;,
+        &quot;coordinates&quot;: [100.0, 0.0]
+    },
+    ...
+]
+
+Geometry collection
+{
+  &quot;type&quot;:&quot;GeometryCollection&quot;,
+  &quot;geometries&quot;:[
+      {
+        &quot;type&quot;:&quot;Point&quot;,
+        &quot;coordinates&quot;:[
+            0.0,
+            100.0
+        ]
+      },
+      ...
+  ]
+}
+</code></pre>
+
+<h2 id="label-Returns-3A">Returns:</h2>
+
+<p>Returns a success message to the API caller, with a response status of 201</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18</pre>
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/requests/add_points.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'lib/requests/add_points.rb', line 45</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_points'>add_points</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_points_array'>points_array</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_map!'>map!</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_parse_point'><span class='object_link'><a href="#parse_point-instance_method" title="#parse_point (method)">parse_point</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_points_geom'><span class='object_link'><a href="#points_geom-instance_method" title="#points_geom (method)">points_geom</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
@@ -486,24 +605,55 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Helper method to check and confirm the radius params.</p>
+
+<h2 id="label-Parameters-3A">Parameters:</h2>
+<dl class="rdoc-list note-list"><dt>params
+<dd>
+<p>Full params from API call, will only need to check Radius and Meters.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Point</span><span class='label_end'>&quot;:</span><span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Point</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>coordinates</span><span class='label_end'>&quot;:</span> <span class='lbracket'>[</span><span class='float'>100.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='rbracket'>]</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Radius</span><span class='label_end'>&quot;:</span> <span class='float'>50.0</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Meters</span><span class='label_end'>&quot;:</span> <span class='kw'>true</span>
+<span class='rbrace'>}</span>
+</code></pre>
+</dd></dl>
+
+<h2 id="label-Returns-3A">Returns:</h2>
+
+<p>Returns the radius in Meters to the caller.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-32
-33
-34
-35
-36
-37
-38
-39
-40</pre>
+57
+58
+59
+60
+61
+62
+63
+64
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/requests/geo_radius.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/requests/geo_radius.rb', line 57</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_check_radius'>check_radius</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_radius'>radius</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Radius</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -528,28 +678,60 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Takes a SQL Query and runs it aginst a Postgres/PostGIS databse results from Query are then reutned back to where call was made.</p>
+
+<h2 id="label-Parameters-3A">Parameters:</h2>
+<dl class="rdoc-list note-list"><dt>sql
+<dd>
+<p>The SQL Query to be made, this should be a `:string` datatype.  Addionally this could have $n number of fillable parameters.</p>
+</dd><dt>params
+<dd>
+<p>These are the params that could be used to fill the previous SQL Query.</p>
+</dd></dl>
+
+<h2 id="label-Returns-3A">Returns:</h2>
+
+<p>A string representing the response from the database.</p>
+
+<h2 id="label-Example-3A">Example:</h2>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_execute_sql_query'>execute_sql_query</span><span class='lparen'>(</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SELECT ST_AsGeoJSON(point) FROM geo_points WHERE ST_Distance(point, ST_GeographyFromText($1)) &lt;= $2</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='id identifier rubyid_radius_meters'>radius_meters</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span>
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17</pre>
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/helpers/db_execs.rb', line 5</span>
+      <pre class="code"><span class="info file"># File 'lib/helpers/db_execs.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_execute_sql_query'>execute_sql_query</span><span class='lparen'>(</span><span class='id identifier rubyid_sql'>sql</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='kw'>begin</span>
@@ -581,20 +763,477 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>
-<pre class="code ruby"><code class="ruby">&quot;type&quot;: &quot;Polygon&quot;,
-&quot;coordinates&quot;: [
-  [
-    [100.0, 0.0],
-    [101.0, 0.0],
-    [101.0, 1.0],
-    [100.0, 1.0],
-    [100.0, 0.0]
-  ]
-]
+<p>Request method to GET GeoJSON point(s) within a geographical polygon. Function is able to take both Polygon with Holes or without Holes. Although only a Polygon with no Holes will work successfully, logic is only setup for</p>
+
+<h2 id="label-Parameters-3A">Parameters:</h2>
+<dl class="rdoc-list note-list"><dt>params
+<dd>
+<p>A GeoJSON Polygon is expected here.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Poly</span><span class='label_end'>&quot;:</span><span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Polygon</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>coordinates</span><span class='label_end'>&quot;:</span> <span class='lbracket'>[</span>
+            <span class='lbracket'>[</span>
+                <span class='lbracket'>[</span><span class='float'>100.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='rbracket'>]</span><span class='comma'>,</span>
+                <span class='lbracket'>[</span><span class='float'>101.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='rbracket'>]</span><span class='comma'>,</span>
+                <span class='lbracket'>[</span><span class='float'>101.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rbracket'>]</span><span class='comma'>,</span>
+                <span class='lbracket'>[</span><span class='float'>100.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rbracket'>]</span><span class='comma'>,</span>
+                <span class='lbracket'>[</span><span class='float'>100.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='rbracket'>]</span>
+            <span class='rbracket'>]</span>
+        <span class='rbracket'>]</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Holes</span><span class='label_end'>&quot;:</span> <span class='kw'>false</span>
+<span class='rbrace'>}</span>
+</code></pre>
+</dd></dl>
+
+<h2 id="label-Returns-3A">Returns:</h2>
+
+<p>Returns GeoJSON point(s) to the API caller, with a response status of 200</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>StandardError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/requests/geo_polygon.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_geo_polygon'>geo_polygon</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>GeoJSON Polygon needed</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Poly</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Holes boolean parameter needed</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='lbracket'>[</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Holes</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Holes parameter value needs to be boolean</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='lbracket'>[</span><span class='kw'>true</span><span class='comma'>,</span> <span class='kw'>false</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Holes</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Holes</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_parse_poly_holes'><span class='object_link'><a href="#parse_poly_holes-instance_method" title="#parse_poly_holes (method)">parse_poly_holes</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Poly</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_poly_query_string'>poly_query_string</span> <span class='op'>=</span> <span class='id identifier rubyid_parse_polygon_no_holes'><span class='object_link'><a href="#parse_polygon_no_holes-instance_method" title="#parse_polygon_no_holes (method)">parse_polygon_no_holes</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Poly</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db_result_arr'>db_result_arr</span> <span class='op'>=</span> <span class='id identifier rubyid_geo_polygon_no_holes'><span class='object_link'><a href="#geo_polygon_no_holes-instance_method" title="#geo_polygon_no_holes (method)">geo_polygon_no_holes</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_poly_query_string'>poly_query_string</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='const'>Rack</span><span class='op'>::</span><span class='const'>Response</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_db_result_arr'>db_result_arr</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Content-Type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/json</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="geo_polygon_no_holes-instance_method">
+  
+    #<strong>geo_polygon_no_holes</strong>(poly_query_string)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Helper function to make the query to the DB to GET GeoJSON point(s) within a geographical polygon.</p>
+
+<h2 id="label-Parameters-3A">Parameters:</h2>
+<dl class="rdoc-list note-list"><dt>poly_query_string
+<dd>
+<p>A string representation of the Geo Polygon coordinates.</p>
+</dd></dl>
+
+<h2 id="label-Returns-3A">Returns:</h2>
+
+<p>Returns database respone from which GeoJSON Point(s) are wthin the provided Geo Polygon</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/requests/geo_polygon.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_geo_polygon_no_holes'>geo_polygon_no_holes</span><span class='lparen'>(</span><span class='id identifier rubyid_poly_query_string'>poly_query_string</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_polygon'>polygon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>POLYGON((</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_poly_query_string'>poly_query_string</span><span class='embexpr_end'>}</span><span class='tstring_content'>))</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_execute_sql_query'><span class='object_link'><a href="#execute_sql_query-instance_method" title="#execute_sql_query (method)">execute_sql_query</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT ST_AsGeoJSON(point) FROM geo_points WHERE ST_DWithin(point, ST_GeomFromText(&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_polygon'>polygon</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;), 0)</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map!'>map!</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
+    <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="geo_radius-instance_method">
+  
+    #<strong>geo_radius</strong>(params)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Request method to GET GeoJSON point(s) within a radius around a point.</p>
+
+<h2 id="label-Parameters-3A">Parameters:</h2>
+<dl class="rdoc-list note-list"><dt>params
+<dd>
+<p>GeoJSON Point and integer radius in feet/meters.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Point</span><span class='label_end'>&quot;:</span><span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Point</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>coordinates</span><span class='label_end'>&quot;:</span> <span class='lbracket'>[</span><span class='float'>100.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='rbracket'>]</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Radius</span><span class='label_end'>&quot;:</span> <span class='float'>50.0</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Meters</span><span class='label_end'>&quot;:</span> <span class='kw'>true</span>
+<span class='rbrace'>}</span>
+</code></pre>
+</dd></dl>
+
+<h2 id="label-Returns-3A">Returns:</h2>
+
+<p>Returns GeoJSON point(s) to the API caller, with a response status of 200</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>StandardError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/requests/geo_radius.rb', line 23</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_geo_radius'>geo_radius</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>GeoJSON point needed</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Point</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_radius_meters'>radius_meters</span> <span class='op'>=</span> <span class='id identifier rubyid_check_radius'><span class='object_link'><a href="#check_radius-instance_method" title="#check_radius (method)">check_radius</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='id identifier rubyid_parse_point'><span class='object_link'><a href="#parse_point-instance_method" title="#parse_point (method)">parse_point</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Point</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>POINT(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_point'>point</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_point'>point</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_db_result_arr'>db_result_arr</span> <span class='op'>=</span> <span class='id identifier rubyid_execute_sql_query'><span class='object_link'><a href="#execute_sql_query-instance_method" title="#execute_sql_query (method)">execute_sql_query</a></span></span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SELECT ST_AsGeoJSON(point) FROM geo_points WHERE ST_Distance(point, ST_GeographyFromText($1)) &lt;= $2</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+    <span class='lbracket'>[</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='id identifier rubyid_radius_meters'>radius_meters</span><span class='rbracket'>]</span>
+  <span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map!'>map!</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
+    <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='const'>Rack</span><span class='op'>::</span><span class='const'>Response</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_db_result_arr'>db_result_arr</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Content-Type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/json</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="init_db-instance_method">
+  
+    #<strong>init_db</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Simple function to call few queries on Databse, this will initialize a new database if not already ready.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/helpers/init_queries.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_init_db'>init_db</span>
+  <span class='id identifier rubyid_execute_sql_query'><span class='object_link'><a href="#execute_sql_query-instance_method" title="#execute_sql_query (method)">execute_sql_query</a></span></span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#CREATE_EXTENTION-constant" title="CREATE_EXTENTION (constant)">CREATE_EXTENTION</a></span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_execute_sql_query'><span class='object_link'><a href="#execute_sql_query-instance_method" title="#execute_sql_query (method)">execute_sql_query</a></span></span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#CREATE_TABLE-constant" title="CREATE_TABLE (constant)">CREATE_TABLE</a></span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_execute_sql_query'><span class='object_link'><a href="#execute_sql_query-instance_method" title="#execute_sql_query (method)">execute_sql_query</a></span></span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#CLEAR_POINTS_TABLE-constant" title="CLEAR_POINTS_TABLE (constant)">CLEAR_POINTS_TABLE</a></span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_point-instance_method">
+  
+    #<strong>parse_point</strong>(point_parm)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Takes a GeoJSON point, takes out and returns the coordinates.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='lbrace'>{</span>
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Point</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>coordinates</span><span class='label_end'>&quot;:</span> <span class='lbracket'>[</span><span class='float'>100.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='rbracket'>]</span>
+<span class='rbrace'>}</span>
 </code></pre>
 
-<p></p>
+<h2 id="label-Parameters-3A">Parameters:</h2>
+<dl class="rdoc-list note-list"><dt>point_parm
+<dd>
+<p>GeoJSON point is accepted, should follow the above json structure.</p>
+</dd></dl>
+
+<h2 id="label-Returns-3A">Returns:</h2>
+
+<p>Returns a array of 1 coordinate from the GeoJSON point object.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='lbracket'>[</span><span class='float'>100.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='rbracket'>]</span>
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>StandardError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20
+21
+22
+23
+24
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/helpers/parse_point.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse_point'>parse_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point_parm'>point_parm</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Not a point object</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_point_parm'>point_parm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Point</span><span class='tstring_end'>&#39;</span></span>
+
+  <span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='id identifier rubyid_point_parm'>point_parm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>coordinates</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>No coordinates</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_point'>point</span>
+
+  <span class='id identifier rubyid_point'>point</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_poly_holes-instance_method">
+  
+    #<strong>parse_poly_holes</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function should be used for Polygon with holes, but is not used.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>StandardError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/helpers/parse_polygon.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse_poly_holes'>parse_poly_holes</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Polygon with Holes not supported</span><span class='tstring_end'>&#39;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_polygon_no_holes-instance_method">
+  
+    #<strong>parse_polygon_no_holes</strong>(poly_parm)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function takes a Polygon object with no holes and has its coordinates taken out and joined into a string and returned.</p>
+
+<p>Polygon with no holes:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Polygon</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>coordinates</span><span class='label_end'>&quot;:</span> <span class='lbracket'>[</span>
+        <span class='lbracket'>[</span>
+            <span class='lbracket'>[</span><span class='float'>100.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='float'>101.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='float'>101.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='float'>100.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='lbracket'>[</span><span class='float'>100.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='rbracket'>]</span>
+        <span class='rbracket'>]</span>
+    <span class='rbracket'>]</span>
+<span class='rbrace'>}</span>
+</code></pre>
+
+<h2 id="label-Parameters-3A">Parameters:</h2>
+<dl class="rdoc-list note-list"><dt>poly_parm
+<dd>
+<p>A Polynomial object with no holes.</p>
+</dd></dl>
+
+<h2 id="label-Returns-3A">Returns:</h2>
+
+<p>A string representing of the coordinates from the GeoJSON Polygram object.</p>
 
 
   </div>
@@ -632,348 +1271,10 @@
 35
 36
 37
-38
-39
-40</pre>
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/requests/geo_polygon.rb', line 27</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_geo_polygon'>geo_polygon</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>GeoJSON Polygon needed</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Poly</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Holes boolean parameter needed</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='lbracket'>[</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Holes</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Holes parameter value needs to be boolean</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='lbracket'>[</span><span class='kw'>true</span><span class='comma'>,</span> <span class='kw'>false</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Holes</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-
-  <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Holes</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-    <span class='id identifier rubyid_parse_poly_holes'><span class='object_link'><a href="#parse_poly_holes-instance_method" title="#parse_poly_holes (method)">parse_poly_holes</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Poly</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-  <span class='kw'>else</span>
-    <span class='id identifier rubyid_poly_query_string'>poly_query_string</span> <span class='op'>=</span> <span class='id identifier rubyid_parse_polygon_no_holes'><span class='object_link'><a href="#parse_polygon_no_holes-instance_method" title="#parse_polygon_no_holes (method)">parse_polygon_no_holes</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Poly</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_db_result_arr'>db_result_arr</span> <span class='op'>=</span> <span class='id identifier rubyid_geo_polygon_no_holes'><span class='object_link'><a href="#geo_polygon_no_holes-instance_method" title="#geo_polygon_no_holes (method)">geo_polygon_no_holes</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_poly_query_string'>poly_query_string</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-
-  <span class='const'>Rack</span><span class='op'>::</span><span class='const'>Response</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_db_result_arr'>db_result_arr</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Content-Type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/json</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="geo_polygon_no_holes-instance_method">
-  
-    #<strong>geo_polygon_no_holes</strong>(poly_query_string)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-42
-43
-44
-45
-46
-47
-48</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/requests/geo_polygon.rb', line 42</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_geo_polygon_no_holes'>geo_polygon_no_holes</span><span class='lparen'>(</span><span class='id identifier rubyid_poly_query_string'>poly_query_string</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_polygon'>polygon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>POLYGON((</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_poly_query_string'>poly_query_string</span><span class='embexpr_end'>}</span><span class='tstring_content'>))</span><span class='tstring_end'>&quot;</span></span>
-
-  <span class='id identifier rubyid_execute_sql_query'><span class='object_link'><a href="#execute_sql_query-instance_method" title="#execute_sql_query (method)">execute_sql_query</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT ST_AsGeoJSON(point) FROM geo_points WHERE ST_DWithin(point, ST_GeomFromText(&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_polygon'>polygon</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;), 0)</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map!'>map!</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
-    <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="geo_radius-instance_method">
-  
-    #<strong>geo_radius</strong>(params)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>StandardError</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/requests/geo_radius.rb', line 15</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_geo_radius'>geo_radius</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>GeoJSON point needed</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Point</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-
-  <span class='id identifier rubyid_radius_meters'>radius_meters</span> <span class='op'>=</span> <span class='id identifier rubyid_check_radius'><span class='object_link'><a href="#check_radius-instance_method" title="#check_radius (method)">check_radius</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='id identifier rubyid_parse_point'><span class='object_link'><a href="#parse_point-instance_method" title="#parse_point (method)">parse_point</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Point</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>POINT(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_point'>point</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_point'>point</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
-
-  <span class='id identifier rubyid_db_result_arr'>db_result_arr</span> <span class='op'>=</span> <span class='id identifier rubyid_execute_sql_query'><span class='object_link'><a href="#execute_sql_query-instance_method" title="#execute_sql_query (method)">execute_sql_query</a></span></span><span class='lparen'>(</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SELECT ST_AsGeoJSON(point) FROM geo_points WHERE ST_Distance(point, ST_GeographyFromText($1)) &lt;= $2</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-    <span class='lbracket'>[</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='id identifier rubyid_radius_meters'>radius_meters</span><span class='rbracket'>]</span>
-  <span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map!'>map!</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
-    <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-
-  <span class='const'>Rack</span><span class='op'>::</span><span class='const'>Response</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_db_result_arr'>db_result_arr</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Content-Type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/json</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="init_db-instance_method">
-  
-    #<strong>init_db</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-10
-11
-12
-13
-14</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/helpers/init_queries.rb', line 10</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_init_db'>init_db</span>
-  <span class='id identifier rubyid_execute_sql_query'><span class='object_link'><a href="#execute_sql_query-instance_method" title="#execute_sql_query (method)">execute_sql_query</a></span></span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#CREATE_EXTENTION-constant" title="CREATE_EXTENTION (constant)">CREATE_EXTENTION</a></span></span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_execute_sql_query'><span class='object_link'><a href="#execute_sql_query-instance_method" title="#execute_sql_query (method)">execute_sql_query</a></span></span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#CREATE_TABLE-constant" title="CREATE_TABLE (constant)">CREATE_TABLE</a></span></span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_execute_sql_query'><span class='object_link'><a href="#execute_sql_query-instance_method" title="#execute_sql_query (method)">execute_sql_query</a></span></span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#CLEAR_POINTS_TABLE-constant" title="CLEAR_POINTS_TABLE (constant)">CLEAR_POINTS_TABLE</a></span></span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="parse_point-instance_method">
-  
-    #<strong>parse_point</strong>(point_parm)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>StandardError</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-3
-4
-5
-6
-7
-8
-9
-10</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/helpers/parse_point.rb', line 3</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_parse_point'>parse_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point_parm'>point_parm</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Not a point object</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_point_parm'>point_parm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Point</span><span class='tstring_end'>&#39;</span></span>
-
-  <span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='id identifier rubyid_point_parm'>point_parm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>coordinates</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>No coordinates</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_point'>point</span>
-
-  <span class='id identifier rubyid_point'>point</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="parse_poly_holes-instance_method">
-  
-    #<strong>parse_poly_holes</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>StandardError</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-16
-17
-18</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/helpers/parse_polygon.rb', line 16</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_parse_poly_holes'>parse_poly_holes</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Polygon with Holes not supported</span><span class='tstring_end'>&#39;</span></span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="parse_polygon_no_holes-instance_method">
-  
-    #<strong>parse_polygon_no_holes</strong>(poly_parm)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>StandardError</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/helpers/parse_polygon.rb', line 3</span>
+      <pre class="code"><span class="info file"># File 'lib/helpers/parse_polygon.rb', line 27</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse_polygon_no_holes'>parse_polygon_no_holes</span><span class='lparen'>(</span><span class='id identifier rubyid_poly_parm'>poly_parm</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Not a Poly object</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_poly_parm'>poly_parm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Polygon</span><span class='tstring_end'>&#39;</span></span>
@@ -1004,6 +1305,33 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Helper method to help parse coordinates from a GeoCollection.</p>
+
+<h2 id="label-Parameters-3A">Parameters:</h2>
+<dl class="rdoc-list note-list"><dt>geo_collection
+<dd>
+<p>A Geometry collection object is expected here.</p>
+
+<pre class="code ruby"><code class="ruby">{
+  &quot;type&quot;:&quot;GeometryCollection&quot;,
+  &quot;geometries&quot;:[
+      {
+        &quot;type&quot;:&quot;Point&quot;,
+        &quot;coordinates&quot;:[
+            0.0,
+            100.0
+        ]
+      },
+      ...
+  ]
+}
+</code></pre>
+</dd></dl>
+
+<h2 id="label-Returns-3A">Returns:</h2>
+
+<p>Returns an array of coordinates.</p>
+
 
   </div>
 </div>
@@ -1029,14 +1357,14 @@
       <pre class="lines">
 
 
-20
-21
-22
-23
-24</pre>
+79
+80
+81
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/requests/add_points.rb', line 20</span>
+      <pre class="code"><span class="info file"># File 'lib/requests/add_points.rb', line 79</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_points_geom'>points_geom</span><span class='lparen'>(</span><span class='id identifier rubyid_geo_collection'>geo_collection</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>This is not a GeometryCollection nor a Points array</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_geo_collection'>geo_collection</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>GeometryCollection</span><span class='tstring_end'>&#39;</span></span>
@@ -1060,6 +1388,21 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Helper method to through any errors if there is a discrepancy in the params.</p>
+
+<h2 id="label-Parameters-3A">Parameters:</h2>
+<dl class="rdoc-list note-list"><dt>radius
+<dd>
+<p>Radius value from params, should be a non-negative numeric value.</p>
+</dd><dt>radius_measure
+<dd>
+<p>Radius measurment type, true for meters false for feet.</p>
+</dd></dl>
+
+<h2 id="label-Returns-3A">Returns:</h2>
+
+<p>N/A. No Returns, just throws any errors that may arise from radius params.</p>
+
 
   </div>
 </div>
@@ -1085,17 +1428,17 @@
       <pre class="lines">
 
 
-42
-43
-44
-45
-46
-47
-48
-49</pre>
+79
+80
+81
+82
+83
+84
+85
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/requests/geo_radius.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/requests/geo_radius.rb', line 79</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_radius_errors'>radius_errors</span><span class='lparen'>(</span><span class='id identifier rubyid_radius'>radius</span><span class='comma'>,</span> <span class='id identifier rubyid_radius_measure'>radius_measure</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Radius parameter needed</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_radius'>radius</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -1119,20 +1462,31 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Simple function to fill the Points table with random values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-16
-17
-18
-19
-20</pre>
+23
+24
+25
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/helpers/init_queries.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'lib/helpers/init_queries.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_random_fill'>random_fill</span>
   <span class='id identifier rubyid_add_points'><span class='object_link'><a href="#add_points-instance_method" title="#add_points (method)">add_points</a></span></span><span class='lparen'>(</span><span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>100</span><span class='rparen'>)</span> <span class='kw'>do</span>
@@ -1149,7 +1503,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sun May  2 23:52:14 2021 by
+  Generated on Mon May  3 11:09:03 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-3.0.0).
 </div>

@@ -2,28 +2,32 @@
 
 require './lib/helpers/parse_polygon'
 
-# Polygons
-
-# Coordinates of a Polygon are an array of linear ring (see
-# Section 3.1.6) coordinate arrays.  The first element in the array
-# represents the exterior ring.  Any subsequent elements represent
-# interior rings (or holes).
-
-# No holes:
-
-# {
-#   "type": "Polygon",
-#   "coordinates": [
-#     [
-#       [100.0, 0.0],
-#       [101.0, 0.0],
-#       [101.0, 1.0],
-#       [100.0, 1.0],
-#       [100.0, 0.0]
-#     ]
-#   ]
-# }
-
+# Request method to GET GeoJSON point(s) within a geographical polygon.
+# Function is able to take both Polygon with Holes or without Holes.
+# Although only a Polygon with no Holes will work successfully, logic is only setup for
+#
+# == Parameters:
+# params::
+#   A GeoJSON Polygon is expected here.
+#    {
+#        "Poly":{
+#            "type": "Polygon",
+#            "coordinates": [
+#                [
+#                    [100.0, 0.0],
+#                    [101.0, 0.0],
+#                    [101.0, 1.0],
+#                    [100.0, 1.0],
+#                    [100.0, 0.0]
+#                ]
+#            ]
+#        },
+#        "Holes": false
+#    }
+#
+# == Returns:
+# Returns GeoJSON point(s) to the API caller, with a response status of 200
+#
 def geo_polygon(params)
   raise StandardError, 'GeoJSON Polygon needed' unless params['Poly']
   raise StandardError, 'Holes boolean parameter needed' if [nil, 0].include?(params['Holes'])
@@ -39,6 +43,15 @@ def geo_polygon(params)
   Rack::Response.new(db_result_arr.to_json, 200, { 'Content-Type' => 'application/json' })
 end
 
+# Helper function to make the query to the DB to GET GeoJSON point(s) within a geographical polygon.
+#
+# == Parameters:
+# poly_query_string::
+#   A string representation of the Geo Polygon coordinates.
+#
+# == Returns:
+# Returns database respone from which GeoJSON Point(s) are wthin the provided Geo Polygon
+#
 def geo_polygon_no_holes(poly_query_string)
   polygon = "POLYGON((#{poly_query_string}))"
 

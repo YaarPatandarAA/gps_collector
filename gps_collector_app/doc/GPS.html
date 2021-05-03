@@ -102,17 +102,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Converts the object into textual markup given a specific `format` (defaults to `:html`)</p>
-
-<h2 id="label-Parameters-3A">Parameters:</h2>
-<dl class="rdoc-list note-list"><dt>format
-<dd>
-<p>A Symbol declaring the format to convert the object to. This can be `:text` or `:html`.</p>
-</dd></dl>
-
-<h2 id="label-Returns-3A">Returns:</h2>
-
-<p>A string representing the object in a specified format.</p>
+<p>Class to initialize the Rack::Request for accepting calls</p>
 
 
   </div>
@@ -152,7 +142,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Function will setup a new Rack::Request env.</p>
+</div></span>
   
 </li>
 
@@ -195,7 +187,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#response-instance_method" title="#response (instance method)">#<strong>response</strong>  &#x21d2; Object </a>
+      <a href="#response-instance_method" title="#response (instance method)">#<strong>response</strong>  &#x21d2; JSON </a>
     
 
     
@@ -210,7 +202,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Converts the object into textual markup given a specific `format` (defaults to `:html`).</p>
+<p>Response function will route calls to appropriate methods.</p>
 </div></span>
   
 </li>
@@ -248,12 +240,12 @@
       <pre class="lines">
 
 
-22
-23
-24</pre>
+14
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/gps.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'lib/gps.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
   <span class='ivar'>@request</span> <span class='op'>=</span> <span class='const'>Rack</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
@@ -279,18 +271,29 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Function will setup a new Rack::Request env.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-18
-19
-20</pre>
+10
+11
+12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/gps.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'lib/gps.rb', line 10</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_finish'>finish</span>
@@ -309,7 +312,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="response-instance_method">
   
-    #<strong>response</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>response</strong>  &#x21d2; <tt>JSON</tt> 
   
 
   
@@ -318,13 +321,31 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Converts the object into textual markup given a specific `format` (defaults to `:html`)</p>
+<p>Response function will route calls to appropriate methods</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>depending on the route, a JSON object will be returned. Otherwise a success message.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -332,20 +353,20 @@
       <pre class="lines">
 
 
+21
+22
+23
+24
+25
+26
+27
 28
 29
 30
-31
-32
-33
-34
-35
-36
-37
-38</pre>
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/gps.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'lib/gps.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_response'>response</span>
   <span class='id identifier rubyid_body_read'>body_read</span> <span class='op'>=</span> <span class='ivar'>@request</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span>
@@ -368,7 +389,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sun May  2 23:52:14 2021 by
+  Generated on Mon May  3 11:09:03 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-3.0.0).
 </div>
