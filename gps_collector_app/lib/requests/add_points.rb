@@ -23,7 +23,7 @@ ADD_POINT_SQL = 'INSERT INTO geo_points (point) VALUES '
 #      },
 #      ...
 #  ]
-# 
+#
 #  Geometry collection
 #  {
 #    "type":"GeometryCollection",
@@ -38,7 +38,7 @@ ADD_POINT_SQL = 'INSERT INTO geo_points (point) VALUES '
 #        ...
 #    ]
 #  }
-# 
+#
 # == Returns:
 # Returns a success message to the API caller, with a response status of 201
 #
@@ -72,7 +72,7 @@ end
 #         ...
 #     ]
 #   }
-# 
+#
 # == Returns:
 # Returns an array of coordinates.
 #

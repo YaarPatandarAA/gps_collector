@@ -3,10 +3,10 @@
 Dir['./lib/requests/*.rb'].sort.each { |file| require file }
 
 # Class to initialize the Rack::Request for accepting calls
-# 
+#
 class GPS
   # Function will setup a new Rack::Request env.
-  # 
+  #
   def self.call(env)
     new(env).response.finish
   end

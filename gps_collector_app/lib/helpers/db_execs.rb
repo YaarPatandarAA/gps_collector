@@ -7,7 +7,7 @@ require 'pg'
 #
 # == Parameters:
 # sql::
-#   The SQL Query to be made, this should be a `:string` datatype. 
+#   The SQL Query to be made, this should be a `:string` datatype.
 #   Addionally this could have $n number of fillable parameters.
 #
 # params::

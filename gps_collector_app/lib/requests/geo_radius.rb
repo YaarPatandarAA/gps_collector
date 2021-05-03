@@ -69,10 +69,10 @@ end
 # == Parameters:
 # radius::
 #   Radius value from params, should be a non-negative numeric value.
-# 
+#
 # radius_measure::
 #   Radius measurment type, true for meters false for feet.
-# 
+#
 # == Returns:
 # N/A. No Returns, just throws any errors that may arise from radius params.
 #

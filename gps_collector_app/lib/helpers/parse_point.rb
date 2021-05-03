@@ -13,7 +13,7 @@
 #
 # == Returns:
 # Returns a array of 1 coordinate from the GeoJSON point object.
-#  [100.0, 0.0]   
+#  [100.0, 0.0]
 #
 def parse_point(point_parm)
   raise StandardError, 'Not a point object' if point_parm['type'] != 'Point'
